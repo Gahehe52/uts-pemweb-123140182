@@ -19,7 +19,7 @@ async function fetchCoinDetail(id) {
 }
 
 const formatChartData = (chartData) => {
-  return chartData.prices.map(priceEntry => ({
+  return chartData.map(priceEntry => ({
     timestamp: new Date(priceEntry[0]).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }),
     price: priceEntry[1],
   }));
