@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Link, Outlet } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="min-h-screen bg-crypto-dark text-crypto-light font-sans">
+      {/* Header / Navbar */}
+      <header className="bg-gray-900 shadow-md">
+        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <Link to="/" className="text-2xl font-bold text-crypto-yellow">
+            CryptoTracker
+          </Link>
+          <div>
+            <Link to="/" className="px-4 text-white hover:text-crypto-yellow">
+              Home
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+      {/* Konten Halaman Dinamis */}
+      <main className="container mx-auto px-6 py-8">
+        <Outlet /> {/* Rute turunan (Home, CoinDetail) akan dirender di sini */}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-center py-4 mt-12">
+        <p className="text-gray-400">
+          Dibuat untuk UTS PAW - Muhammad Ghama Al Fajri - 123140182
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </footer>
+    </div>
   )
 }
 
