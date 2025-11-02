@@ -3,7 +3,6 @@ import { Link, Outlet } from 'react-router-dom'
 function App() {
   return (
     <div className="min-h-screen bg-crypto-dark text-crypto-light font-sans">
-      {/* Header / Navbar */}
       <header className="bg-gray-900 shadow-md">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-crypto-yellow">
@@ -17,12 +16,10 @@ function App() {
         </nav>
       </header>
 
-      {/* Konten Halaman Dinamis */}
       <main className="container mx-auto px-6 py-8">
-        <Outlet /> {/* Rute turunan (Home, CoinDetail) akan dirender di sini */}
+        <Outlet /> 
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-center py-4 mt-12">
         <p className="text-gray-400">
           Dibuat untuk UTS PAW - Muhammad Ghama Al Fajri - 123140182
